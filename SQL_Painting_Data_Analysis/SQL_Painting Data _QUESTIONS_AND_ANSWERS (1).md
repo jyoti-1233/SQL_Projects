@@ -3,7 +3,7 @@
 
 **Author**: 
 
-**Email**: Jyoti.Thakur
+**Email**:  Jyoti.thakur0720@gmail.com
 
 **Website**: https://jyoti-1233.github.io/
 
