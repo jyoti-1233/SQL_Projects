@@ -1,4 +1,4 @@
-# SQL_MUSIC_Data_Analysis
+# SQL_Painting_Data_Analysis
 
 The dataset we use is the famous paintings dataset taken from Kaggle. then I use SQL queries to answer over 20 problems related to the famous paintings dataset.
 
