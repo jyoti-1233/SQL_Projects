@@ -1,4 +1,4 @@
-# <p align="center">Walmart Sales Data Analysist</p>
+# <p align="center">Walmart Sales Data Analysis</p>
 
 
 Kaggle - [Dataset Used] (https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting)
