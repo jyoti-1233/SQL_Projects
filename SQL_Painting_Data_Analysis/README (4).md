@@ -3,6 +3,8 @@
 The dataset we use is the famous paintings dataset taken from Kaggle. then I use SQL queries to answer over 20 problems related to the famous paintings dataset.
 
 Kaggle dataset link - https://www.kaggle.com/datasets/mexwell/famous-paintings/data
+
+
 Total Data Table Used
 
 artist.csv
