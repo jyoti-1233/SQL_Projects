@@ -1,4 +1,6 @@
-# SQL_Painting_Data_Analysis
+# <p align="center"> Painting_Data_Analysis Project</p>
+
+
 
 The dataset we use is the famous paintings dataset taken from Kaggle. then I use SQL queries to answer over 20 problems related to the famous paintings dataset.
 
