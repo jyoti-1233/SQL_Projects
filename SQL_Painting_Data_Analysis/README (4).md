@@ -8,13 +8,21 @@ Kaggle dataset link - https://www.kaggle.com/datasets/mexwell/famous-paintings/d
 Total Data Table Used
 
 artist.csv
+
 canvas_size.csv
+
 image_link.csv
+
 museum.csv
+
 museum_hours.csv
+
 product_size.csv
+
 subject.csv
+
 work.csv
+
 
 /* Q1 Are there museuems without any paintings?*/
 ````sql
