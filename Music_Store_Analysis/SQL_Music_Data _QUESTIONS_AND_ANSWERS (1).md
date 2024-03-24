@@ -1,7 +1,7 @@
 # <p align="center">Music Store Data Analysis Project</p>
 
 
-This project analyze the music playlist database. You can examine the dataset with SQL and help the store understand its business growth by answering simple questions.
+This project analyze the music playlist database. You can examine the dataset with SQL and help the store understand by its business growth by answering simple questions.
 
 
 
