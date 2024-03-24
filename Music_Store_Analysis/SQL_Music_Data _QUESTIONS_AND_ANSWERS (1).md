@@ -1,13 +1,5 @@
+# <p align="center">Music Store Data Analysis Project</p>
 
-## Questions and Answers
-
-**Author**: 
-
-**Email**: Jyoti.thakur0720@gmail.com
-
-**Website**: https://jyoti-1233.github.io/
-
-**LinkedIn**: https://www.linkedin.com/in/jyoti-thakur-24b6332ab/
 
 This project analyze the music playlist database. You can examine the dataset with SQL and help the store understand its business growth by answering simple questions.
 
