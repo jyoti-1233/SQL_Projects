@@ -1,7 +1,13 @@
-# Zomato_Dataset_Analysis
-Zomato Data Exploration and Analysis with SQL (SQL SERVER)
+
+# <p align="center">Zomato_Dataset_Analysis</p>
+
 
 Most of us know that Zomato is an Indian multinational restaurant aggregator and food delivery company. The idea of analysing the Zomato_dataset is to get the overview of what actutally is happening in their business. Zomato Dataset consist of more than 9000 rows with columns such as Restaurants_id, Restaurants_name, City, Location, Cuisines and many more...
+
+Kaggle - [Dataset Used]  https://www.kaggle.com/datasets/shrutimehta/zomato-restaurants-data
+
+[SQL Analysis (Code) ] https://github.com/jyoti-1233/SQL_Projects/blob/main/Zomato_Dataset_Analysis/SQL_Zomato%20Data_Analysis_Q&A%20.md
+
 
 While Exploring Data with SQL, I was working on the following things...
 1. Checked all the details of table such column name, data types and constraints
