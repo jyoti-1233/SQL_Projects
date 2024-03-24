@@ -4,9 +4,9 @@
 
 #### **Tools Used**: Excel, MySQL, Tableau
 
-[Dataset Used](https://www.kaggle.com/datasets/mitishaagarwal/patient)
+Kaggle - [Dataset Used] (https://www.kaggle.com/datasets/mitishaagarwal/patient)
 
-[SQL Analysis (Code) https://github.com/jyoti-1233/SQL_Projects/blob/main/Hospital-Mortality-Prediction-SQL/Hospital_Mortality_SQL_Analysis.sql]
+[SQL Analysis (Code) ] https://github.com/jyoti-1233/SQL_Projects/blob/main/Hospital-Mortality-Prediction-SQL/Hospital_Mortality_SQL_Analysis.sql
 
 
 - **Business Problem:** Healthcare professionals are trying to identify the main causes of in-hospital mortality for admitted patients. By having a clear understanding of the causes early on, healthcare professionals will be in a better position to develop targeted interventions, and implement evidence-based protocols to address the factors that contribute to in-hospital patient deaths. 
@@ -60,3 +60,6 @@ There were a total of 8 comorbidities in the dataset, and the 3 shown in the out
 ![Q8](https://i.ibb.co/Tkc9RVr/Screen-Shot-2023-07-01-at-2-56-23-PM.png)
 
 Generally speaking, and as shown by this output, prolonged stays in the ICU are associated with higher mortality rates . An increased length of stay in the ICU can be due to a number of reasons, such as cardiovascular system diseases, nervous system diseases, infections, underlying illnesses, and increased exposure to potential complications According to this output, a patient who stayed in the ICU for longer than a day had a higher chance of death compared to someone who spent less than a day in the ICU. 
+
+
+
