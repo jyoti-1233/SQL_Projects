@@ -1,13 +1,4 @@
 
-## Questions and Answers
-
-**Author**: 
-
-**Email**: Jyoti.thakur0720@gmail.com
-
-**Website**: https://jyoti-1233.github.io/
-
-**LinkedIn**: https://www.linkedin.com/in/jyoti-thakur-24b6332ab/
 
 The major aim of thie project is to gain insight into the sales data of Walmart to understand the different factors that affect sales of the different branches.
 
@@ -40,7 +31,6 @@ CREATE TABLE IF NOT EXISTS sales(
 );
 ````
 
--- Data cleaning
 ````sql
 SELECT
 	*
