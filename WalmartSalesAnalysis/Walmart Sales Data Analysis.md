@@ -1,9 +1,8 @@
 # <p align="center">Walmart Sales Data Analysis</p>
 
+SQL Analysis (Code) -  https://github.com/jyoti-1233/SQL_Projects/blob/main/WalmartSalesAnalysis/SQL_WalmartSales_Data_Analysis_Q&A.md
 
 Kaggle - [Dataset Used] (https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting)
-
-[SQL Analysis (Code) ] https://github.com/jyoti-1233/SQL_Projects/blob/main/WalmartSalesAnalysis/SQL_WalmartSales_Data_Analysis_Q&A.md
 
 DataBase Schema Code - https://github.com/jyoti-1233/SQL_Projects/blob/main/WalmartSalesAnalysis/Walmart_DB_Schema.md
 
