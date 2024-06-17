@@ -3,12 +3,12 @@
 The major aim of thie project is to gain insight into the sales data of Walmart to understand the different factors that affect sales of the different branches.
 
 
--- Create database
+ Create database
 ````sql
 CREATE DATABASE IF NOT EXISTS walmartSales;
 ````
 
--- Create table
+ Create table
 ````sql
 CREATE TABLE IF NOT EXISTS sales(
 	invoice_id VARCHAR(30) NOT NULL PRIMARY KEY,
@@ -30,32 +30,19 @@ CREATE TABLE IF NOT EXISTS sales(
     rating FLOAT(2, 1)
 );
 ````
-
+---------------------------------------------------------------------------------------------
 ````sql
 SELECT
 	*
 FROM sales;
 ````
-
--- Add the time_of_day column
+---------------------------------------------------------------------------------------------
+Add the "time_of_day" column
 ````sql
-SELECT
-	time,
-	(CASE
-		WHEN `time` BETWEEN "00:00:00" AND "12:00:00" THEN "Morning"
-        WHEN `time` BETWEEN "12:01:00" AND "16:00:00" THEN "Afternoon"
-        ELSE "Evening"
-    END) AS time_of_day
-FROM sales;
-````
--------------------------------------------
 
 ````sql
 ALTER TABLE sales ADD COLUMN time_of_day VARCHAR(20);
 
--- For this to work turn off safe mode for update
--- Edit > Preferences > SQL Edito > scroll down and toggle safe mode
--- Reconnect to MySQL: Query > Reconnect to server
 UPDATE sales
 SET time_of_day = (
 	CASE
@@ -65,8 +52,8 @@ SET time_of_day = (
     END
 );
 ````
-
--- Add day_name column
+---------------------------------------------------------------------------------------------
+Add "day_name" column
 ````sql
 SELECT
 	date,
@@ -79,7 +66,7 @@ UPDATE sales
 SET day_name = DAYNAME(date);
 ````
 
--- Add month_name column
+Add "Month_name" column
 
 ````sql
 SELECT
@@ -92,31 +79,29 @@ ALTER TABLE sales ADD COLUMN month_name VARCHAR(10);
 UPDATE sales
 SET month_name = MONTHNAME(date);
 ````
-##############################################################################################-
+---------------------------------------------------------------------------------------------
 
 
 
 
+---------------------------- Generic ------------------------------ -->
 
--- ---------------------------- Generic ------------------------------ -->
-
--- How many unique cities does the data have? -->
+Q1 : How many unique cities does the data have? -->
 ````sql
 SELECT 
 	DISTINCT city
 FROM sales;
 ````
--- In which city is each branch?
+Q2 : In which city is each branch?
 ````sql
 SELECT 
 	DISTINCT city,
     branch
 FROM sales;
-
 ````
--- ---------------------------- Product -------------------------------
+------------------------------ Product -------------------------------
 
--- How many unique product lines does the data have?
+Q3 How many unique product lines does the data have?
 
 ````sql
 SELECT
@@ -124,18 +109,8 @@ SELECT
 FROM sales;
 ````
 
--- What is the most selling product line
+Q4 What is the most selling product line
 
-````sql
-SELECT
-	SUM(quantity) as qty,
-    product_line
-FROM sales
-GROUP BY product_line
-ORDER BY qty DESC;
-````sql
-
-What is the most selling product line
 ````sql
 SELECT
 	SUM(quantity) as qty,
@@ -144,8 +119,19 @@ FROM sales
 GROUP BY product_line
 ORDER BY qty DESC;
 ````
+--------------------------------------------------------------------------------------------
+Q5 : What is the most selling product line
 
--- What is the total revenue by month
+````sql
+SELECT
+	SUM(quantity) as qty,
+    product_line
+FROM sales
+GROUP BY product_line
+ORDER BY qty DESC;
+````
+--------------------------------------------------------------------------------------------
+Q6 : What is the total revenue by month
 
 ````sql
 SELECT
@@ -155,8 +141,8 @@ FROM sales
 GROUP BY month_name 
 ORDER BY total_revenue;
 ````
-
--- What month had the largest COGS?
+--------------------------------------------------------------------------------------------
+Q7 : What month had the largest COGS?
 ````sql
 SELECT
 	month_name AS month,
@@ -165,8 +151,8 @@ FROM sales
 GROUP BY month_name 
 ORDER BY cogs;
 ````
-
--- What product line had the largest revenue?
+--------------------------------------------------------------------------------------------
+Q8  What product line had the largest revenue?
 
 ````sql
 SELECT
@@ -176,8 +162,8 @@ FROM sales
 GROUP BY product_line
 ORDER BY total_revenue DESC;
 ````
-
--- What is the city with the largest revenue?
+--------------------------------------------------------------------------------------------
+Q9 What is the city with the largest revenue?
 
 ````sql
 SELECT
@@ -188,8 +174,8 @@ FROM sales
 GROUP BY city, branch 
 ORDER BY total_revenue;
 ````
-
--- What product line had the largest VAT?
+--------------------------------------------------------------------------------------------
+Q10 What product line had the largest VAT?
 
 ````sql
 SELECT
@@ -200,8 +186,8 @@ GROUP BY product_line
 ORDER BY avg_tax DESC;
 ````
 
-
--- Fetch each product line and add a column to those product 
+--------------------------------------------------------------------------------------------
+Q11 : Fetch each product line and add a column to those product 
 -- line showing "Good", "Bad". Good if its greater than average sales
 
 ````sql
@@ -229,8 +215,8 @@ FROM sales
 GROUP BY branch
 HAVING SUM(quantity) > (SELECT AVG(quantity) FROM sales);
 ````
-
--- What is the most common product line by gender
+--------------------------------------------------------------------------------------------
+Q 11 What is the most common product line by gender
 ````sql
 SELECT
 	gender,
@@ -240,7 +226,9 @@ FROM sales
 GROUP BY gender, product_line
 ORDER BY total_cnt DESC;
 ````
--- What is the average rating of each product line
+
+--------------------------------------------------------------------------------------------
+Q 12 What is the average rating of each product line
 
 ````sql
 SELECT
@@ -258,25 +246,24 @@ ORDER BY avg_rating DESC;
 
 
 
--- How many unique customer types does the data have?
+How many unique customer types does the data have?
 
 ````sql
 SELECT
 	DISTINCT customer_type
 FROM sales;
-
 ````
-
--- How many unique payment methods does the data have?
+--------------------------------------------------------------------------------------------
+ How many unique payment methods does the data have?
 
 ````sql
 SELECT
 	DISTINCT payment
 FROM sales;
 ````
+--------------------------------------------------------------------------------------------
 
-
--- What is the most common customer type?
+What is the most common customer type?
 
 ````sql
 SELECT
@@ -286,9 +273,9 @@ FROM sales
 GROUP BY customer_type
 ORDER BY count DESC;
 ````
+--------------------------------------------------------------------------------------------
 
-
--- Which customer type buys the most?
+Which customer type buys the most?
 
 ````sql
 SELECT
@@ -297,8 +284,8 @@ SELECT
 FROM sales
 GROUP BY customer_type;
 ````
-
--- What is the gender of most of the customers?
+--------------------------------------------------------------------------------------------
+What is the gender of most of the customers?
 ````sql
 SELECT
 	gender,
@@ -308,8 +295,8 @@ GROUP BY gender
 ORDER BY gender_cnt DESC;
 ````
 
-
--- What is the gender distribution per branch?
+--------------------------------------------------------------------------------------------
+What is the gender distribution per branch?
 
 ````sql
 SELECT
@@ -321,14 +308,9 @@ GROUP BY gender
 ORDER BY gender_cnt DESC;
 ````
 
+--------------------------------------------------------------------------------------------
 
-
--- Gender per branch is more or less the same hence, I don't think has
--- an effect of the sales per branch and other factors.
-
--- Which time of the day do customers give most ratings? 
- ---------------------------------------------------------------------------------------------------------- 
-
+Which time of the day do customers give most ratings? 
 
 ````sql
 SELECT
@@ -340,10 +322,8 @@ ORDER BY avg_rating DESC;
 ````
 
 
- -- Looks like time of the day does not really affect the rating, its
--- more or less the same rating each time of the day.alter
--- Which time of the day do customers give most ratings per branch? 
- ---------------------------------------------------------------------------------------------------------- 
+
+Which time of the day do customers give most ratings per branch? 
 
 ````sql
 SELECT
@@ -356,10 +336,9 @@ ORDER BY avg_rating DESC;
 
 ````
 
+--------------------------------------------------------------------------------------------
 
--- Branch A and C are doing well in ratings, branch B needs to do a  -->
--- little more to get better ratings.
--- Which day fo the week has the best avg ratings? -->
+Which day fo the week has the best avg ratings? -->
 
 ````sql
 SELECT
@@ -370,12 +349,8 @@ GROUP BY day_name
 ORDER BY avg_rating DESC;
 ````
 
- -- Mon, Tue and Friday are the top best days for good ratings
--- why is that the case, how many sales are made on these days? -->
-
----------------------------------------------------------------------------------------------------------- -->
-
-
+--------------------------------------------------------------------------------------------
+why is that the case, how many sales are made on these days? 
 
 ````sql
 SELECT 
@@ -392,7 +367,7 @@ ORDER BY total_sales DESC;
  -- ---------------------------- Sales ---------------------------------
 -- -------------------------------------------------------------------- -->
 
-- -- Number of sales made in each time of the day per weekday  -->
+ Number of sales made in each time of the day per weekday
 
 ````sql
 SELECT
@@ -407,8 +382,9 @@ filled during the evening hours
 
 ````
 
+--------------------------------------------------------------------------------------------
 
-- -- Which of the customer types brings the most revenue? -->
+Which of the customer types brings the most revenue?
 
 ````sql
 SELECT
@@ -418,8 +394,8 @@ FROM sales
 GROUP BY customer_type
 ORDER BY total_revenue;
 ````
-
--- Which city has the largest tax/VAT percent? -->
+--------------------------------------------------------------------------------------------
+Which city has the largest tax/VAT percent?
 ````sql
 SELECT
 	city,
@@ -428,8 +404,8 @@ FROM sales
 GROUP BY city 
 ORDER BY avg_tax_pct DESC;
 ````
-
- -- Which customer type pays the most in VAT? -->
+--------------------------------------------------------------------------------------------
+Which customer type pays the most in VAT? 
 ````sql
 SELECT
 	customer_type,
@@ -439,4 +415,3 @@ GROUP BY customer_type
 ORDER BY total_tax;
 ````
 -- --------------------------------------------------------------------
--- -------------------------------------------------------------------- -->
