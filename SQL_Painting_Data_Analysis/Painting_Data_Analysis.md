@@ -87,9 +87,8 @@ WHERE city LIKE '^[0-9]';
 ---------------------------------------------------------------------------------------------
 
 
-/* Q6:  Identify the museums with invalid city information in the given datase */
-/*  Fetch the top 10 most famous painting name */
-
+/* Q6: Fetch the top 10 most famous painting name */
+ 
 ````sql
 select work_id, name from work 
 where work_id in (SELECT TOP 10  work_id FROM product_size
