@@ -9,7 +9,7 @@ Kaggle - [Dataset Used]  https://www.kaggle.com/datasets/shrutimehta/zomato-rest
 [SQL Analysis (Code) ] https://github.com/jyoti-1233/SQL_Projects/blob/main/Zomato_Dataset_Analysis/SQL_Zomato%20Data_Analysis_Q&A%20.md
 
 
-While Exploring Data with SQL, I was working on the following things...
+While Exploring Data with SQL, I Worked on the following things...
 1. Checked all the details of table such column name, data types and constraints
 2. Checked for duplicate values in [RestaurantId] column
 3. Removed unwanted columns from table
