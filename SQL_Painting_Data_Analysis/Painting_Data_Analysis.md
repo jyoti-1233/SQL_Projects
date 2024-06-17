@@ -6,25 +6,18 @@ The dataset we use is the famous paintings dataset taken from Kaggle. then I use
 
 Kaggle dataset link - https://www.kaggle.com/datasets/mexwell/famous-paintings/data
 
-
+````sql
 Total Data Table Used
-
 artist.csv
-
 canvas_size.csv
-
 image_link.csv
-
 museum.csv
-
 museum_hours.csv
-
 product_size.csv
-
 subject.csv
-
 work.csv
-
+````
+---------------------------------------------------------------------------------------------
 
 /* Q1 Are there museuems without any paintings?*/
 ````sql
